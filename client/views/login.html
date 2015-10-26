@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- BOOTSTRAP -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="/libraries/bootstrap.css">
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="form-container">
+			<div class="col-md-6" "login-form">
+				<h3>Log in</h3>
+				<form action="/login" method='POST'>
+					User Name:
+					<input class="form-control" type="text" name="username" required><br>
+					Password:
+					<input class="form-control" type="password" name="password" required><br>
+					<button class="btn btn-primary btn-block enter-in">Log In</button>
+				</form>
+			</div>
+
+			<div class="col-md-6" "signup-form">
+				<h3>Sign Up</h3>
+					<form action='/signup' method='POST'>
+						<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>' />
+						User Name: 
+						<input class="form-control" type='text' name='username' required><br>
+						Password:
+						<input class="form-control" type='password' name='password' required><br>
+						<button class="btn btn-primary btn-block">Sign Up!</button><br>
+					</form>
+			</div>
+		</div>
+		
+		
+	</div>
+	<!-- JQUERY -->
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+	<script src="/libraries/jquery-1.11.3.js"></script>
+</body>
+</html>
