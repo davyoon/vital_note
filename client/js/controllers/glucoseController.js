@@ -27,6 +27,7 @@ app.controller('GlucoseController', ['$scope', '$http', function($scope, $http){
 		});
 	}
 
+
 	refresh();
 
 	$scope.createGlucose = function(){
