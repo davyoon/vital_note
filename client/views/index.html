@@ -4,31 +4,32 @@
 	<meta charset="UTF-8">
 	<title>Document</title>	
 	<!-- BOOTSTRAP -->
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 	<link rel="stylesheet" href="/libraries/bootstrap.css">
 	<link rel="stylesheet" href="/css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body class="main-body">
+	<div class="top-header">
+		<img src="/images/Drawing.png" class="logo">
+		<a href='/logout' class="pull-right logout">Log out</a>
+	</div>
 	<div class="container" ng-controller="MainController">
-		<div class="top-header">
-			<a href='/logout' class="pull-right">Log out</a>
-		</div>
-		<div class="row" "welcome-message">
-			<p>Welcome</p>
-		</div>
-
-		<div class="row">
-		
-				<ul class="nav nav-pills">
+		<div class="col-sm-offset-2 col-sm-8">
+			<div class="row welcome-message">
+				<p>Welcome To Vital Note</p>
+			</div>
+			<div class="row tabs">
+				<ul class="nav nav-pills pull-right">
 					<li><a href ng-click="setRoute('')" class="btn">Home</a></li>
 					<li><a href ng-click="setRoute('pressure')" class="btn">Blood Pressure</a></li>
 					<li><a href ng-click="setRoute('glucose')" class="btn">Blood Glucose</a></li>
 				</ul>
 			</div>
-			<p>hello</p>
-		<div ng-view></div>
-	</div>
-
+			<div ng-view></div>
+		</div>
+	
 	</div>
 
 	<!-- JQUERY -->

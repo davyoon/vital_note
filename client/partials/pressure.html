@@ -1,21 +1,101 @@
-<p> THIS IS THE PRESSURE PARTIAL</p>
-<form ng-submit="createPressure()">
-	<input type="text" placeholder="systolic" ng-model="pressure.systolic">
-	<input type="text" placeholder="diastolic" ng-model="pressure.diastolic">
-	<button type="submit">Submit</button>
-</form>
-other one
-<select name="pressureSelect" id="pressureSelect" ng-model="search.filter">
-	<option value="">ALL</option>
-</select>
+<div class="col-md-12 input-form">
+	<form ng-submit="createPressure()" class="pull-right">
+		<select name="pressureSelect" id="pressureSelect" ng-model="search.filter" class="form-control dropdown inline">
+		</select>
+		<input type="text" placeholder="systolic" class="form-control input-box inline" ng-model="pressure.systolic"><span style="font-size: 20px">&nbsp; / &nbsp;</span>
+		<input type="text" placeholder="diastolic" class="form-control input-box inline" ng-model="pressure.diastolic">
+		<button type="submit" class="btn">Submit</button>
+	</form>
+</div>	
 
-<h1> There are {{pressures.length}} pressures</h1>
-<ul>
-	<li ng-repeat="pressure in pressures | filter:search:strict">
-		{{pressure.time | date: "HH:mm"}} ||
-		{{pressure.time | date}} || 
-		{{pressure.systolic}} /
-		{{pressure.diastolic}}
-		<button ng-click="removePressure(pressure.pressure_id)"></button>
-	</li>
-</ul>
+
+	<!-- <h1> There are {{pressures.length}} pressures</h1> -->
+	
+		<!-- <div ng-repeat="pressure in pressures | filter:search:strict" class="readings">
+			<
+			{{pressure.time | date: "HH:mm"}} ||
+			{{pressure.time | date}} || 
+			{{pressure.systolic}} /
+			{{pressure.diastolic}}
+			<button class="btn btn-danger"ng-click="removePressure(pressure.pressure_id)">Delete</button>
+		<hr>
+		</div> -->
+
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Time</th>
+					<th>&nbsp;</th>
+					<th>Systolic</th>
+					<th></th>
+					<th>&nbsp;</th>
+					<th>Diastolic</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr ng-repeat="pressure in pressures | filter:search:strict" class="readings">
+					<td>{{pressure.time | date}}</td>
+					<td>{{pressure.time | date: "HH:mm"}}</td>
+					<td>&nbsp;</td>
+					<td>{{pressure.systolic}}</td>
+					<td>/</td>
+					<td>&nbsp;</td>
+					<td>{{pressure.diastolic}}</td>
+					<td><button class="btn btn-danger"ng-click="removePressure(pressure.pressure_id)">Delete</button></td>
+				</tr>	
+			</tbody>	
+		</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

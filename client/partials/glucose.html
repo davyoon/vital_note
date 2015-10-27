@@ -1,12 +1,11 @@
-<p> THIS IS THE GLUCOSE PARTIAL </p>
-<form ng-submit="createGlucose()">
-	<input type="text" placeholder="mg/dL" ng-model="glucose.reading">
-	<button type="submit">Submit</button>
-</form>
-other one
-<select name="glucoseSelect" id="glucoseSelect" ng-model="search.filter">
-	<option value="">Please select</option>
-</select>
+<div class="col-md-12 input-form">	
+	<form ng-submit="createGlucose()" class="pull-right">
+		<select name="glucoseSelect" id="glucoseSelect" ng-model="search.filter" class="form-control dropdown inline">
+		</select>
+		<input type="text" placeholder="mg/dL" class="form-control input-box inline" ng-model="glucose.reading">
+		<button type="submit" class="btn">Submit</button>
+	</form>
+</div>
 
 <h1> There are {{glucoses.length}} glucoses</h1>
 <ul>

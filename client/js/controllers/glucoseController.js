@@ -17,7 +17,7 @@ app.controller('GlucoseController', ['$scope', '$http', function($scope, $http){
 			}
 
 			$("#glucoseSelect").empty();
-			$("#glucoseSelect").append("<option value=''>Please select</option>");
+			$("#glucoseSelect").append("<option value=''>Filter</option>");
 			for(var i = 0; i < array.length; i++){
 				$("#glucoseSelect").append("<option " + "value=" + array[i] + ">" + array[i] + "</option>");
 			}

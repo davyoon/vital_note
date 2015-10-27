@@ -15,9 +15,9 @@ app.controller('PressureController', ['$scope', '$http', function($scope, $http)
 					}
 				}
 			}
-			
+
 			$("#pressureSelect").empty();
-			$("#pressureSelect").append("<option value=''>Please select</option>");
+			$("#pressureSelect").append("<option value=''>Filter</option>");
 			for(var i = 0; i < array.length; i++){
 				$("#pressureSelect").append("<option " + "value=" + array[i] + ">" + array[i] + "</option>");
 			}
