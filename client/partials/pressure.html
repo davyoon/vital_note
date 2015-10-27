@@ -1,2 +1,21 @@
 <p> THIS IS THE PRESSURE PARTIAL</p>
-{{pressure}}
+<form ng-submit="createPressure()">
+	<input type="text" placeholder="systolic" ng-model="pressure.systolic">
+	<input type="text" placeholder="diastolic" ng-model="pressure.diastolic">
+	<button type="submit">Submit</button>
+</form>
+other one
+<select name="pressureSelect" id="pressureSelect" ng-model="search.filter">
+	<option value="">ALL</option>
+</select>
+
+<h1> There are {{pressures.length}} pressures</h1>
+<ul>
+	<li ng-repeat="pressure in pressures | filter:search:strict">
+		{{pressure.time | date: "HH:mm"}} ||
+		{{pressure.time | date}} || 
+		{{pressure.systolic}} /
+		{{pressure.diastolic}}
+		<button ng-click="removePressure(pressure.pressure_id)"></button>
+	</li>
+</ul>

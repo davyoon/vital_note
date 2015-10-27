@@ -2,5 +2,5 @@ app.controller('MainController', ['$scope', '$location', function($scope, $locat
 	$scope.setRoute = function(route){
 		$location.path(route);
 	}
-	$scope.name = "picard";
+
 }])

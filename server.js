@@ -51,7 +51,7 @@ passport.deserializeUser(function(user, done){
 // __________________PASSPORT_____________________
 
 var loginCheck = function(req, res){
-	if(req.session.passport.user === undefined){
+	if(req.session.passport === undefined){
 		console.log('NOT LOGGED IN');
 		res.redirect('/');
 	}
@@ -78,6 +78,13 @@ app.post('/login', passport.authenticate('local', {
 
 
 
+app.get('/logout', function(req, res){
+	req.logout();
+	res.redirect('/');
+});
+
+
+
 app.post('/signup', function(req, res){
 	var name = req.body.username;
 	var password = req.body.password;
@@ -101,25 +108,95 @@ app.post('/signup', function(req, res){
 
 
 app.get('/home', function(req, res){
-	res.sendFile(__dirname + '/client/main.html')
+	loginCheck(req,res);
+	res.sendFile(__dirname + '/client/views/index.html')
 });
 
 
 
+app.get('/api/pressures', function(req, res){
+	var user = req.session.passport.user.user[0].user_id;
+	db.all('SELECT * FROM pressure WHERE user_idp=?', user, function(err, rows){
+		if(err){
+			throw err;
+		}
+		res.json(rows);
+	});
+})
 
 
 
+app.post('/api/pressures', function(req, res){
+	var user = req.session.passport.user.user[0].user_id;
+	var systolic = req.body.systolic;
+	var diastolic = req.body.diastolic;
+	var time = Date.now();
+	var month = new Date().getMonth() + 1;
+	var year = new Date().getFullYear();
+	var monYr = month + "/" + year;
+
+	db.run('INSERT INTO pressure (systolic, diastolic, user_idp, time, filter) VALUES (?, ?, ?, ?, ?)', systolic, diastolic, user, time, monYr, function(err){
+		if(err){
+			throw err;
+		}
+		res.json(req.body);
+	})
+})
 
 
 
+app.delete('/api/pressures/:id', function(req, res){
+	var id = req.params.id;
+	db.run('DELETE FROM pressure WHERE pressure_id=?', id, function(err){
+		if(err){
+			throw err;
+		}
+		res.json(err);
+	})
+})
 
 
 
+app.get('/api/glucoses', function(req, res){
+	var user = req.session.passport.user.user[0].user_id;
+	db.all('SELECT * FROM glucose WHERE user_idg=?', user, function(err, rows){
+		console.log(rows)
+		if(err){
+			throw err;
+		}
+		res.json(rows);
+	});
+})
 
 
 
+app.post('/api/glucoses', function(req, res){
+	var user = req.session.passport.user.user[0].user_id;
+	var glucose = req.body.reading;
+	var time = Date.now();
+	var month = new Date().getMonth() + 1;
+	var year = new Date().getFullYear();
+	var monYr = month + "/" + year;
+
+	db.run('INSERT INTO glucose (level, user_idg, time, filter) VALUES (?, ?, ?, ?)',glucose, user, time, monYr, function(err){
+		if(err){
+			throw err;
+		}
+		res.json(req.body);
+	})
+})
 
 
+
+app.delete('/api/glucoses/:id', function(req, res){
+	var id = req.params.id;
+	db.run('DELETE FROM glucose WHERE glucose_id=?', id, function(err){
+		if(err){
+			throw err;
+		}
+		res.json(err);
+	})
+})
 
 
 

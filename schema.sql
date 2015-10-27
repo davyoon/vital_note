@@ -11,8 +11,10 @@ CREATE TABLE users (
 CREATE TABLE pressure (
 	pressure_id INTEGER PRIMARY KEY autoincrement,
 	systolic INTEGER,
-	dystolic INTEGER,
+	diastolic INTEGER,
 	user_idp INTEGER,
+	time INTEGER,
+	filter TEXT,
 	FOREIGN KEY(user_idp) REFERENCES users(users_id)
 );
 
@@ -20,5 +22,7 @@ CREATE TABLE glucose (
 	glucose_id INTEGER PRIMARY KEY autoincrement,
 	level INTEGER,
 	user_idg INTEGER,
+	time INTEGER,
+	filter TEXT,
 	FOREIGN KEY(user_idg) REFERENCES users(users_id)
 );

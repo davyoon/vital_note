@@ -5,15 +5,16 @@ app.config(function($routeProvider){
 
 	$routeProvider
 		.when('/pressure', {
-			// controller: 'PressureController',
+			controller: 'PressureController',
 			templateUrl: '/partials/pressure.html'
 		})
 		.when('/glucose', {
-			// controller: 'GlucoseController',
+			controller: 'GlucoseController',
 			templateUrl: '/partials/glucose.html'
 		})
-		.when('/home', {
-			// controller: 'HomeController', 
+		.when('/', {
+			controller: 'HomeController', 
 			templateUrl: '/partials/home.html'
 		})
+
 });

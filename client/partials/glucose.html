@@ -1,1 +1,19 @@
 <p> THIS IS THE GLUCOSE PARTIAL </p>
+<form ng-submit="createGlucose()">
+	<input type="text" placeholder="mg/dL" ng-model="glucose.reading">
+	<button type="submit">Submit</button>
+</form>
+other one
+<select name="glucoseSelect" id="glucoseSelect" ng-model="search.filter">
+	<option value="">Please select</option>
+</select>
+
+<h1> There are {{glucoses.length}} glucoses</h1>
+<ul>
+	<li ng-repeat="glucose in glucoses | filter:search:strict">
+		{{glucose.time | date: "HH:mm"}} ||
+		{{glucose.time | date}} ||
+		{{glucose.level}}
+		<button ng-click="removeGlucose(glucose.glucose_id)"></button>
+	</li>
+</ul>
