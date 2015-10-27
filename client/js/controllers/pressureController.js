@@ -5,25 +5,23 @@ app.controller('PressureController', ['$scope', '$http', function($scope, $http)
 			$scope.pressures = response;
 			var array = [];
 			for(var i = 0; i < response.length; i++){
-				var date = new Date(response[i].time);
-				var month = date.getMonth() + 1;
-				var year = date.getFullYear();
+				var date = response[i].filter;
 				if(i === 0){
-					array.push(month + "/" + year)
+					array.push(date);
 				}else{
-					var previousDate = new Date(response[i-1].time);
-					var previousMonth = previousDate.getMonth() + 1;
-					var previousYear = previousDate.getFullYear();
-					if(month != previousMonth || year != previousYear){
-						array.push(month + "/" + year)
+					var previousDate = response[i-1].filter;
+					if(date != previousDate){
+						array.push(date);
 					}
 				}
 			}
-
+			
+			$("#pressureSelect").empty();
+			$("#pressureSelect").append("<option value=''>Please select</option>");
 			for(var i = 0; i < array.length; i++){
 				$("#pressureSelect").append("<option " + "value=" + array[i] + ">" + array[i] + "</option>");
 			}
-			
+
 		});
 	}
 	
