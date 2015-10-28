@@ -4,14 +4,16 @@
 	<meta charset="UTF-8">
 	<title>Document</title>	
 	<!-- BOOTSTRAP -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="/libraries/bootstrap.css">
 	<link rel="stylesheet" href="/css/style.css">
 	<link href='https://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
 </head>
 <body class="main-body">
-	<div class="top-header">
+	
+		
+	<div class="top-header col-xs-12">
 		<img src="/images/Drawing.png" class="logo">
 		<a href='/logout' class="pull-right logout">Log out</a>
 	</div>
@@ -28,6 +30,7 @@
 				</ul>
 			</div>
 			<div ng-view></div>
+			<input type="button" onClick="window.print()" value="Print This Page" class="print pull-right"/>
 		</div>
 	
 	</div>

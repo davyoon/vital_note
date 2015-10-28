@@ -1,4 +1,4 @@
-<div class="col-md-12 input-form">
+<div class="col-sm-12 input-form">
 	<form ng-submit="createPressure()" class="pull-right">
 		<select name="pressureSelect" id="pressureSelect" ng-model="search.filter" class="form-control dropdown inline">
 		</select>
@@ -27,10 +27,10 @@
 				<tr>
 					<th>Date</th>
 					<th>Time</th>
-					<th>&nbsp;</th>
+					<th class='hideMe'>&nbsp;</th>
 					<th>Systolic</th>
-					<th></th>
-					<th>&nbsp;</th>
+					<th class='hideMe'></th>
+					<th class='hideMe'>&nbsp;</th>
 					<th>Diastolic</th>
 					<th>&nbsp;</th>
 				</tr>
@@ -40,10 +40,10 @@
 				<tr ng-repeat="pressure in pressures | filter:search:strict" class="readings">
 					<td>{{pressure.time | date}}</td>
 					<td>{{pressure.time | date: "HH:mm"}}</td>
-					<td>&nbsp;</td>
+					<td class='hideMe'>&nbsp;</td>
 					<td>{{pressure.systolic}}</td>
-					<td>/</td>
-					<td>&nbsp;</td>
+					<td class='hideMe'>/</td>
+					<td class='hideMe'>&nbsp;</td>
 					<td>{{pressure.diastolic}}</td>
 					<td><button class="btn btn-danger"ng-click="removePressure(pressure.pressure_id)">Delete</button></td>
 				</tr>	
