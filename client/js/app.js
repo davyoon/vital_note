@@ -16,6 +16,4 @@ app.config(function($routeProvider){
 			controller: 'HomeController', 
 			templateUrl: '/partials/home.html'
 		})
-});
-
-
+})
