@@ -116,7 +116,7 @@ app.get('/home', function(req, res){
 
 app.get('/api/pressures', function(req, res){
 	var user = req.session.passport.user.user[0].user_id;
-	db.all('SELECT * FROM pressure WHERE user_idp=?', user, function(err, rows){
+	db.all('SELECT * FROM pressure WHERE user_idp=? ORDER BY pressure_id DESC', user, function(err, rows){
 		if(err){
 			throw err;
 		}
@@ -159,7 +159,7 @@ app.delete('/api/pressures/:id', function(req, res){
 
 app.get('/api/glucoses', function(req, res){
 	var user = req.session.passport.user.user[0].user_id;
-	db.all('SELECT * FROM glucose WHERE user_idg=?', user, function(err, rows){
+	db.all('SELECT * FROM glucose WHERE user_idg=? ORDER BY glucose_id DESC', user, function(err, rows){
 		console.log(rows)
 		if(err){
 			throw err;
@@ -206,6 +206,6 @@ app.delete('/api/glucoses/:id', function(req, res){
 
 
 
-app.listen(3000, function(){
+app.listen(9000, function(){
 	console.log("I'm liistening...");
 });
