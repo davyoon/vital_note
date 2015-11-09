@@ -39,7 +39,6 @@ passport.use(new LocalStrategy(function(name, password, done){
 	});
 }));
 
-
 passport.serializeUser(function(user, done){
 	done(null, user);
 });
