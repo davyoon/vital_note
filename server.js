@@ -47,6 +47,7 @@ passport.deserializeUser(function(user, done){
 	done(null, user);
 });
 
+
 // __________________PASSPORT_____________________
 
 var loginCheck = function(req, res){
