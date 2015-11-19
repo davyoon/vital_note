@@ -1,4 +1,10 @@
 var app = angular.module('vitalsApp', ['ngRoute']);
+require('./controllers/mainController.js');
+require('./controllers/homeController.js');
+require('./controllers/glucoseController.js');
+require('./controllers/pressureController.js');
+
+
 
 app.config(function($routeProvider){
 	// $locationProvider.html5Mode(true);
