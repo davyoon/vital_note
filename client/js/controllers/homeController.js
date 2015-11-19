@@ -1,3 +1,5 @@
-app.controller('HomeController', ['$scope', function($scope){
-	
-}])
+module.exports = function(app){
+	app.controller('HomeController', ['$scope', function($scope){
+		
+	}]);
+};

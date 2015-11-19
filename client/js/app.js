@@ -1,8 +1,9 @@
 var app = angular.module('vitalsApp', ['ngRoute']);
-require('./controllers/mainController.js');
-require('./controllers/homeController.js');
-require('./controllers/glucoseController.js');
-require('./controllers/pressureController.js');
+require('./controllers/mainController.js')(app);
+require('./controllers/homeController.js')(app);
+require('./controllers/glucoseController.js')(app);
+require('./controllers/pressureController.js')(app);
+
 
 
 
