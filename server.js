@@ -190,7 +190,7 @@ app.post('/api/glucoses', function(req, res){
 app.delete('/api/glucoses/:id', function(req, res){
 	var id = req.params.id;
 	db.run('DELETE FROM glucose WHERE glucose_id=?', id, function(err){
-		if(err){
+		if(err){sdfsdfdsfsdfs
 			throw err;
 		}
 		res.json(err);
