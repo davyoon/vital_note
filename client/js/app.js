@@ -1,3 +1,4 @@
+var $ = require('jquery');
 var app = angular.module('vitalsApp', ['ngRoute']);
 require('./controllers/mainController.js')(app);
 require('./controllers/homeController.js')(app);
