@@ -9,8 +9,10 @@ VITAL NOTE is a single-page application to help the user's PCP to determine whet
 * Insert date/time automatically
 
 ##Wireframe
+![wireframe](./img/vital_wireframe.jpg)
 
 ##ERD
+![erd](./img/vital_erd.jpg)
 
 ##Pseudocode
 
