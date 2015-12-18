@@ -14,7 +14,27 @@ VITAL NOTE is a single-page application to help the user's PCP to determine whet
 ##ERD
 ![erd](./img/vital_erd.jpg)
 
-##Pseudocode
+##Routes
+Backend
+
+* app.get('/')
+* app.get('/login')
+* app.post('/login')
+* app.get('/logout')
+* app.post('/signup')
+* app.get('/home')
+* app.get('/api/pressures')
+* app.post('/api/pressures')
+* app.delete('/api/pressures/:id')
+* app.get('/api/glucoses')
+* app.post('/api/glucoses')
+* app.delete('/api/glucoses/:id')
+
+Frontend
+
+* '/pressure'
+* '/glucose'
+* '/'
 
 ##Technologies
 * HTML/CSS
