@@ -39,8 +39,12 @@ Frontend
 ##Technologies
 * HTML/CSS
 * JavaScript
+* jQuery
 * Bootstrap
 * Node.js
 * Express.js
 * Angular.js
 * SQLite3
+* Browserify
+* Watchify
+* Passport
